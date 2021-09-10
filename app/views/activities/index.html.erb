@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Move and Groove</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+<div class="activity-page-title"><h1>Activities</h1></div>
+<div class="activity-form-container">
+
+<p id="notice"><%= notice %></p>
+<div class="btn-new-activity"><button type="button" class="btn btn-outline-info"><%= link_to 'New Activity', new_activity_path %></button> </div>
+<table>
+  <tbody>
+    <% @activities.each do |activity| %>
+    
+      <td class="row-flex">
+        <tr class="row-flex"><td class="activity-card-title"><%= activity.title %></td></tr>
+        <tr class="row-flex-0"><td class="activity-card-desc"><%=  activity.description %></td></tr>
+        <tr class="row-flex-2"><td class="activity-card-dur">Duration : </td><td class="activity-card-dur"><%= activity.duration %></td></tr>
+        <tr class="row-flex-2"><td class="activity-card-dat">Date : </td><td class="activity-card-dat"><%= activity.date %></td></tr>
+        <tr class="row-flex-1">
+            <td class="activity-card-act"><%= link_to ' Show ', activity %></td>
+            <td class="activity-card-act"><%= link_to ' Edit ', edit_activity_path(activity) %></td>
+            <td class="activity-card-act"><%= link_to ' Destroy ', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </td>
+
+    <% end %>
+  </tbody>
+</table>
+</div>
+  </body>
+  </html>

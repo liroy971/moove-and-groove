@@ -1,0 +1,2 @@
+class SdAddActivity < ApplicationRecord
+end
