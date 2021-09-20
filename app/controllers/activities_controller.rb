@@ -1,9 +1,10 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[ show edit update destroy ]
 
+
   # GET /activities or /activities.json
   def index
-    @activities = Activity.all
+    @activities = Activity.order("created_at asc").where(user_id: current_user).all
   end
 
   # GET /activities/1 or /activities/1.json

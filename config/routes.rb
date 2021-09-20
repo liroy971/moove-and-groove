@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   resources :activities
  devise_for :users 
-  get '/', to: 'pages#home', as: 'home'
- # get '/activity', to:'pages#activities', as: 'activity'
+  root 'pages#home'
   get '/login', to:'pages#login', as: 'login'
   get '/articles', to: 'posts#index', as: 'posts'
 

@@ -1,67 +1,61 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-// Place all the styles related to the Site controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/*---------------------------------------- General settings !  */
 @font-face {
-    font-family: 'calendas_plusregular';
+    font-family: "calendas_plusregular";
     src: url("font-jumbotron/calendas_plus-webfont.eot");
-    src: url("font-jumbotron/calendas_plus-webfont.eot?#iefix") format('embedded-opentype'),
-         url("font-jumbotron/calendas_plus-webfont.woff2") format('woff2'),
-         url("font-jumbotron/calendas_plus-webfont.woff") format('woff'),
-         url("font-jumbotron/calendas_plus-webfont.ttf") format('truetype'),
-         url("font-jumbotron/calendas_plus-webfont.svg#calendas_plusregular") format('svg');
+    src: url("font-jumbotron/calendas_plus-webfont.eot?#iefix") format("embedded-opentype"), url("font-jumbotron/calendas_plus-webfont.woff2") format("woff2"), url("font-jumbotron/calendas_plus-webfont.woff") format("woff"),
+        url("font-jumbotron/calendas_plus-webfont.ttf") format("truetype"), url("font-jumbotron/calendas_plus-webfont.svg#calendas_plusregular") format("svg");
     font-weight: normal;
     font-style: normal;
-
 }
-html{
-    height: 100%;
-}
-body{
-    position:relative;
+body {
+    position: relative;
     min-height: 100%;
-    display: grid;
-    grid-template-rows: auto auto 1fr;
-    background-color:#e0dfeb;
-    background-image:url("../assets/material.jpg") ;
-    background-repeat: repeat-y;
-    background-position:center;
-    background-size: cover;
-
+    background-color: #e5e5e5;
 }
-h3{
-    font-size: 95%;
-    font-family:calendas_plusregular;
-
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+    font-family: calendas_plusregular;
+    line-height: 2em;
 }
-
-img{
+img {
     width: 100%;
 }
-li{
-    text-decoration-style: none;
-    text-decoration-line: none;
+li {
     text-decoration: none;
 }
-.center{
-    text-align: center;
+a {
+    text-decoration: none !important;
+    background-color: transparent !important;
+    color: grey;
 }
-footer{
-    position: absolute; 
+/*---------------------------------------- HEADER is here !  */
+/*- Bootstrap modification -*/
+.bg-dark {
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+.header {
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: grey;
+}
+.navbar-dark .navbar-brand {
+    color: black;
+}
+.navbar-dark .navbar-brand:hover {
+    color: grey !important;
+}
+/*----------------------------------------- FOOTER is here !  */
+footer {
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -70,248 +64,126 @@ footer{
     display: flex !important;
     align-items: center;
     justify-content: space-around;
-    color: white;
-    background:#343a40;
+    color: #fff;
+    background: black;
+    box-shadow: -1px -1px 5px 1px rgba(0, 0, 0, 0.7);
 }
-a{
-    text-decoration: none !important;
-    background-color: transparent !important; 
-    color: grey;
+.copyright {
+    padding: 1%;
 }
-td{
-    overflow-wrap: break-word;
-    overflow-y: hidden;
-
+/*----------------------------------------- JUMBOTRON is here !  */
+/*--------------------Container  */
+.home-jumbotron-ctn {
+    margin: 0% 5% 0px 5%;
+    color: black;
 }
-.carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-}
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-}
-.divider
-{
-
-}
-.bg-dark
-{
-    background-color: rgba(0, 150, 136, 0.96) !important;
-}
-.header
-{
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7); 
-}
-.navbar-brand
-{
-    font-family: calendas_plusregular;
-}
-.jumbotitre{
+.home-jumb-title-top-left {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     position: bottom;
     padding-top: 10px;
-}
-.jumbostyle{
-    position: relative;
-    background-color: black;
-    transform: rotate(-2deg);
-    margin-left:5%;
-    margin-right:5%;
     margin-top: 3%;
-    margin-bottom: 3%;
-    padding-bottom: 1px;
-    box-shadow: -4px 1px 8px 1px rgba(0, 0, 0, 0.6), 
-    4px -1px 8px 1px rgba(0, 0, 0, 0.6);
-    
+    margin-left: 5%;
 }
-.jumbotitre span{
+.home-jumb-title-top-left span {
     position: relative;
-    top:-20px;
-    padding: 10px;
+    padding: 5px;
     width: fit-content;
     background-color: black;
-    color: whitesmoke;
-    font-family: calendas_plusregular;
-}
-
-.jumbotron{
-    width: 95%;
-    margin: auto;
-    position: relative;
-    top:-20px;
-    margin-bottom: 20px;
-    margin-top: 1%;
     color: white;
+    box-shadow: 2px -1px 3px 1px rgba(0, 0, 0, 0.4);
+}
+/*--------------------Container  */
+.home-jumb-ctn-02 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-image:url("../assets/jumbotron.png");
-    background-repeat: no-repeat;
-    background-position:bottom;
-    background-size: cover;
-    transform: rotate(2deg);
-    border-radius: 50px;
-    box-shadow: 
-    3px 1px 16px 0 rgba(255, 255, 255, 0.25),
-    -3px -1px 16px 0 rgba(255, 255, 255, 0.25);     
-    background: linear-gradient(-45deg, rgba(0,0,0,0.65), rgba(255, 255, 255,0.65)) url("../assets/jumbotron.png");
-
-    font-family: calendas_plusregular;
+    box-shadow: 2px 1px 3px 1px rgba(0, 0, 0, 0.4);
+    background-color: black;
 }
-.caption h3
-{
-    padding: 10px;
-    font-size: 2em;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-.btn-centre-add
-{
-    padding-bottom: 5px;
-    font-size: 20px;
-}
-.btn-centre-info
-{
-    font-size: 20px;
-}
-.carte_activité
-{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 15px;
-    border: 1px solid grey;
-    text-align: center;
-    padding: 0px;
-    margin: 20px;
-    box-shadow: 
-    10px 5px 12px 0 rgba(0, 0, 0, 0.5),
-    -10px -5px 12px 0 rgba(148, 148, 148, 0.5); 
-    background-color: #f7f7f7;
-    height: fit-content;
-}
-.carte_activité img   {
-    border-radius: 15px 15px 0px 0px;
-}
-.btn-shadow
-{
-    box-shadow: 
-    2px 2px 12px 0 rgba(0, 0, 0, 0.8) inset,
-    -2px -2px 12px 0 rgba(255, 255, 255, 0.8) inset;        
-    background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(255, 255, 255,0.65));
-    height: 50px; 
-    width:50px; 
-    border-radius: 50%;
-    border: none;
-    color: whitesmoke;
-    font-family: calendas_plusregular;
+.home-jumbotron-left {
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-.btn-info:hover
-{   
-    background-color: #22272b;
-
-}
-.btn-info
-{   
-    background-color: #22272b;
-}
-.btn-sucess:hover
-{   
-    background-color: #009688;
-    color: white;
-}
-.btn-sucess
-{   
-    background-color: #009688;
-}
-.carte_activité:hover
-{
-    transform: scale(1.01);
-}
-.carte_container
-{
-    border-radius: 1px;
-}
-.carousel-inner img{
+    align-items: center;
     width: 100%;
-    height: 170px;
-    box-shadow: 0px 10px 10px 0 rgba(255, 255, 255, 0.25),
-    0px 10px 10px 0 rgba(255, 255, 255, 0.25) inset;
-
+    background-color: white;
+    background-size: cover;
+    color: black;
 }
-.carte_activité_btn
-{
+.home-jumbotron-left h1 {
+    font-size: 4em;
+}
+/*--------------------Container  */
+.home-jumb-ctn-bottom-right {
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: flex-end !important;
 }
-.home-presentation-container
-{
-
+.home-jumb-title-bottom-right {
+    width: fit-content;
+    padding: 5px;
+    margin-right: 5%;
+    background-color: black;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3);
+    position: top;
+    color: white;
 }
-.home-presentation
-{
-    background-color: #22272b; 
+/*----------------------------------------- BODY is here !  */
+/*- somes words to present the website -*/
+.home-presentation-ctn {
     padding: 5%;
-    line-height: 2em;
-    color: whitesmoke;
-    font-family: Georgia, serif;
+    color: black;
+    width: 80%;
 }
-.home-presentation  b
-{
-    color: ghostwhite;
+.home-presentation-txt a {
+    color: grey;
 }
-.block-bottom{
-    display: flex;
-    background-color: #22272b;
-    padding: 5%;
-
-
+.home-presentation-txt a:hover {
+    color: black;
 }
-.block-home{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/*--------------------Container  */
+/*- An image to create the visual -*/
+.home-image-ctn-02 {
     margin: 5%;
-    background-color: #22272b4d;
-    margin-bottom: 100px;
+}
+/*- Catchphrases -*/
+.home-catchphrase-02 {
+    padding: 5%;
+    margin-top: 5%;
+    width: 100%;
+}
+.home-catchphrase-02 p {
+    width: 70%;
+}
+.home-divider-02 {
+    padding: 5%;
+    width: 70%;
+}
+/*----------------------------------------- Media queries are here !  */
+
+@media screen and (max-width: 640px) {
+}
+@media screen and (min-width: 640px) and (max-width: 940px) {
 }
 
-
-.orange{color: #cc6509;}
-.blue{color: #22272b;}
-.rose{color: #864a74;}
-.vert{color: #009688;}
-.marron{color: #b96421;}
-@media screen and (max-width : 640px)
-{}
-@media screen and (min-width : 640px) and (max-width : 940px)
-{}
-
-.body-block{
-    position:relative;
-    min-height: 100%;
+/*----------------------------------------- forms are here !  */
+.body-block {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 2%;
 }
-.Jumb-log{
+.Jumb-log {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5%;
     width: 100%;
-    height:  300px;
-    background-color: rgba(0, 0, 0, 0.80);
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    
 }
-.block-form{
-    padding-top: 5%;
-    margin-bottom: 5%;
-    margin-top: 3%;
-    background-color: rgba(0, 150, 136, 0.50);
+.block-form {
+    padding: 5%;
+    margin: 5%;
+    background-color: white;
 }
 .block-form-inner {
     margin-top: 20px;
@@ -320,32 +192,32 @@ td{
 .block-form-inner1 {
     margin-bottom: 0px;
 }
-.checkbox-remember{
+.checkbox-remember {
     width: 100%;
     display: flex !important;
     flex-direction: row !important;
-    justify-content:;
+    justify-content: ;
     text-align: left !important;
 }
-.block-form-inner h1{margin-bottom: 20px;
+.block-form-inner h1 {
+    margin-bottom: 20px;
     text-align: center;
 }
-.block-form-inner a{width: 100%;
+.block-form-inner a {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-
 }
-.block-form-inner div{
+.block-form-inner div {
     margin-top: 5px;
     display: flex;
     justify-content: center;
 }
-.block-form-inner1 h1{
+.block-form-inner1 h1 {
     margin-bottom: 5px;
     text-align: center;
-
 }
-.block-form-inner1 div{
+.block-form-inner1 div {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -357,77 +229,75 @@ td{
     display: flex;
     justify-content: center;
 }
-.copyright{padding: 1%;}
 
-.activity-page-title{
+.activity-page-title {
     text-align: center;
+    padding: 3%;
 }
-.activity-form-container{
+.activity-form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.row-flex{
+.row-flex {
     display: flex;
     flex-direction: column;
-    margin:auto;
-    width: 500px;
-    color: white;
+    margin: auto;
+    width: 80%;
+    color: black;
 }
-.row-flex-0{
+
+.row-flex-0 {
     display: flex;
-    background-color: #22272b;
-    margin:auto;
+    background-color: white;
+    margin: auto;
     color: white;
-    width: 500px;
+    width: 80%;
 }
-.row-flex-1{
+.row-flex-1 {
     display: flex;
     justify-content: space-around;
-    background-color: #029286;
-    margin:auto;
+    background-color: #dcd3ca;
+    margin: auto;
     margin-bottom: 100px;
-    width: 500px;
+    width: 80%;
     border-radius: 0px 0px 10px 10px;
 }
-.row-flex-2{
+.row-flex-2 {
     display: flex;
     justify-content: space-between;
-    background-color: #22272b;
-    margin:auto;
-    color: white;
-    width: 500px;
+    background-color: white;
+    margin: auto;
+    color: black;
+    width: 80%;
     border-top: solid 1px black;
 }
-.activity-card-title{
-    background-color: #029286;
+.activity-card-title {
+    background-color: #dcd3ca;
     padding: 2%;
     text-align: center;
     text-transform: uppercase;
     border-radius: 10px 10px 0px 0px;
 }
-.activity-card-desc{
-    background-color: #22272b;
-    padding:2%;
-    text-align: center;
-
-}
-.activity-card-dur{
-    padding: 2%;
-    text-align: center;
-
-}
-.activity-card-dat{
+.activity-card-desc {
+    background-color: white;
     padding: 2%;
     text-align: center;
 }
-.activity-card-act{
+.activity-card-dur {
     padding: 2%;
     text-align: center;
-
 }
-.activity-card-act a{
-    color: white;
+.activity-card-dat {
+    padding: 2%;
+    text-align: center;
+}
+.activity-card-act {
+    padding: 2%;
+    text-align: center;
+}
+.activity-card-act a {
+    color: black;
 }
 .activity-card-act a:hover {
     color: silver;
