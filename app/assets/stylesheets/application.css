@@ -322,7 +322,7 @@ footer {
     overflow-y: auto;
     color: white;
     height: 80%;
-    padding: 3%;
+    padding: 10%;
 }
 ::-webkit-scrollbar {
     width: 5px;
