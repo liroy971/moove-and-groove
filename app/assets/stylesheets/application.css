@@ -311,11 +311,16 @@ footer {
     filter: blur(1px);
 }
 .actvity-card-date{
-    border-bottom: 1px solid #162e3a;
+    
 }
 .card-title{
     color: white;
     height: 70%;
+}
+.card-title h2{
+    border-top: 1px solid #162e3a;
+    border-bottom: 1px solid #162e3a;
+    margin-bottom: 0 !important;
 }
 .card-desc{
     text-align: left;
@@ -455,7 +460,6 @@ footer {
     width: 100%;
     display: flex !important;
     flex-direction: row !important;
-    justify-content: ;
     text-align: left !important;
 }
 .block-form-inner h1 {
@@ -468,7 +472,7 @@ footer {
     justify-content: space-around;
 }
 .block-form-inner div {
-    margin-top: 5px;
+    margin-top: 3%;
     display: flex;
     justify-content: center;
 }
@@ -478,7 +482,6 @@ footer {
 }
 .block-form-inner1 div {
     margin-top: 10px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

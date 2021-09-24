@@ -17,6 +17,22 @@
   </div>
 
   <div class="field-01">
+    <%= form.label 'Activity' %><br>
+  <select name="activity[type_id]">
+  <option value="" label=" "></option>
+  <option value="1">Fitness</option>
+  <option value="2">Running</option>
+  <option value="3">Dance</option>
+  <option value="4">Walking</option>
+  <option value="5">Cycling</option>
+  <option value="6">Skating</option>
+  <option value="7">Strength training</option>
+  <option value="8">Rowing</option>
+  <option value="9">Hiking</option>
+  <option value="10">Mountain biking</option>
+  </select>
+  </div>
+  <div class="field-01">
     <%= form.label :duration %><br>
     <%= form.text_field :duration %>
   </div>
