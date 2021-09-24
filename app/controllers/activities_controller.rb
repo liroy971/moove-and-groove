@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities or /activities.json
   def index
-    @activities = Activity.order("created_at asc").where(user_id: current_user).all
+    @activities = Activity.order("date desc").where(user_id: current_user.id).all
   end
 
   # GET /activities/1 or /activities/1.json
@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/new
   def new
-    @activity = Activity.new
+    @activity = Activity.new 
   end
 
   # GET /activities/1/edit
@@ -22,7 +22,12 @@ class ActivitiesController < ApplicationController
 
   # POST /activities or /activities.json
   def create
-    @activity = Activity.new(activity_params)
+    #activity_params.user_id = 10
+    
+    logger.debug '######################' #créer des logs.
+    logger.debug activity_params #créer des logs.
+    @activity = Activity.new(activity_params.merge(user_id: current_user.id))
+
 
     respond_to do |format|
       if @activity.save
@@ -65,6 +70,8 @@ class ActivitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def activity_params
-      params.require(:activity).permit(:title, :description, :duration, :date)
+
+      params.require(:activity).permit(:title, :description, :duration, :date, :user_id)
+
     end
 end

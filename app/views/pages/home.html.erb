@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Moove and Groove</title>
+        <title>Move and Groove</title>
 
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +15,7 @@
                 <div class="home-jumbotron-left">
                     <h1>Healthy</h1>
                 </div>
-                <video width="100%" height="100%" playsinline autoplay muted>
+                <video width="100%" height="100%"  autoplay muted>
                     <source src="/images/LaNZ_clipped.mp4" type=video/mp4>
                 </video>
             </div>
@@ -24,32 +24,30 @@
             </div>
         </div>
 
-        <div class="home-presentation-ctn">
+        <div class="home-catchphrase-02">
             <h4 class="home-presentation-title">Dear all</h4>
-            <h4 class="home-presentation-txt">
-                Welcome to <b>Move and Groove</b>, a <b>fitness tracker</b> site that allows users to <a href="/users/sign_in">connect</a> and <b>log activities</b> of different kinds. <b>cycling, running or fitness?</b> no problem you just
+            <p class="home-presentation-txt">
+                Welcome to Move and Groove, a fitness <b>tracker</b> site that allows users to <a href="/users/sign_in">connect</a> and log activities of different kinds. cycling, running or fitness? no problem you just
                 have to <a href="/users/sign_up">register</a> to enjoy all the features.<br />
                 <b>
-                    We wish you a good sport activity!<br />
                     The M & G team.<br />
                 </b>
 
                 Our team is available for any questions at <a href="mailto:Moove&groove@mandg.com">Moove&groove@mandg.com</a>
-            </h4>
+            </p>
         </div>
-
         <div class="home-image-ctn-02">
-            <img src="/images/application.jpg" alt="image vide" />
+            <img src="/images/application.png" alt="image vide" />
         </div>
 
         <div class="home-catchphrase-02">
-            <h1>
-                Share your run
-            </h1>
             <h4>
-                Customize your posts by adding dates, stats and details about your activities, save them to access them anytime and anywhere!
+                Share your run
             </h4>
+            <p>
+                Customize your posts by adding dates, stats and details about your activities, save them to access them anytime and anywhere!
+            </p>
         </div>
-        <div class="home-divider-02"></div>
+        <div class="divider-home"></div>
     </body>
 </html>

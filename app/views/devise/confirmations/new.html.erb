@@ -12,15 +12,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </head>
-<body class="body-block">
-<div class="block-form">
+<body>
+<div class="activity-form">
 <div class="block-form-inner1">
 <h1>Resend confirmation instructions</h1>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="field-01">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>

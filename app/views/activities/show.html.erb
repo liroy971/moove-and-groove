@@ -1,24 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Move and Groove</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+<body>
+  <div class="activity-form">
 <p id="notice"><%= notice %></p>
+<div class="show-activity-ctn">
 
 <p>
-  <strong>Title:</strong>
+  <strong>Title:</strong><br>
   <%= @activity.title %>
 </p>
-
 <p>
-  <strong>Description:</strong>
-  <%= @activity.description %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
+  <strong>Duration:</strong><br>
   <%= @activity.duration %>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>Date:</strong><br>
   <%= @activity.date %>
 </p>
-
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+<p class="link">
+<%= link_to 'Back', activities_path %><br> 
+<%= link_to 'Edit', edit_activity_path(@activity) %>
+</p>
+</div>
+<div class="block-form">
+<p>
+  <strong>Description:</strong><br>
+  <%= @activity.description %>
+</p>
+</div>
+</div>
+  </body>
+</html>
