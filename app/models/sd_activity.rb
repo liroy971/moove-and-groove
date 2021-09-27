@@ -1,2 +1,0 @@
-class SdActivity < ApplicationRecord
-end

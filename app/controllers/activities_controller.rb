@@ -3,9 +3,10 @@ class ActivitiesController < ApplicationController
 
 
   # GET /activities or /activities.json
-  def index
-    @activities = Activity.order("date desc").where(user_id: current_user.id).all
-  end
+
+    def index
+      @activities = Activity.order("date desc").where(user_id: current_user.id).where("type_id is not null").all
+    end
 
   # GET /activities/1 or /activities/1.json
   def show
@@ -61,7 +62,6 @@ class ActivitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_activity
