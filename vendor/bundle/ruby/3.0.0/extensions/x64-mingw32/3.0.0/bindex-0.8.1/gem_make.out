@@ -1,0 +1,16 @@
+current directory: C:/Users/urbin/Desktop/P6_Alexis_Urbino/Ruby/project/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+C:/Ruby30-x64bis/bin/ruby.exe -I C:/Ruby30-x64bis/lib/ruby/3.0.0 -r ./siteconf20210924-117668-a825r0.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/urbin/Desktop/P6_Alexis_Urbino/Ruby/project/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: C:/Users/urbin/Desktop/P6_Alexis_Urbino/Ruby/project/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+generating cruby-x64-mingw32.def
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: C:/Users/urbin/Desktop/P6_Alexis_Urbino/Ruby/project/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20210924-117668-9x2ykq/skiptrace/internal

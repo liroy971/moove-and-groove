@@ -10,22 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_130340) do
-
-  create_table "SD_ACTIVITY", primary_key: "ACTIVITY_ID", force: :cascade do |t|
-    t.text "TITLE", null: false
-    t.text "PRESENTATION", null: false
-    t.text "CREATION_DATE"
-  end
-
-# Could not dump table "SD_ADD_ACTIVITY" because of following StandardError
-#   Unknown type 'STRING' for column 'DESCRIPTION'
+ActiveRecord::Schema.define(version: 2021_10_03_115538) do
 
   create_table "activities", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "duration"
-    t.string "date"
+    t.text "duration"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "type_id"
+    t.index ["title", "duration", "description", "date"], name: "ix_activities"
+  end
+
+  create_table "activities_filter", primary_key: "activities_type_id", force: :cascade do |t|
+    t.text "activities_filter_EN"
+    t.integer "user_id"
+  end
+
+  create_table "filters", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,10 +47,12 @@ ActiveRecord::Schema.define(version: 2021_09_09_130340) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "filter_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "SD_ADD_ACTIVITY", "SD_ACTIVITY", column: "ADD_ACTIVITY_ID", primary_key: "ACTIVITY_ID", on_delete: :cascade
-  add_foreign_key "SD_ADD_ACTIVITY", "users", column: "USER_ID", on_delete: :cascade
+  add_foreign_key "activities", "activities_filter", column: "type_id", primary_key: "activities_type_id", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "activities", "users", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "activities_filter", "users", on_update: :cascade, on_delete: :cascade
 end

@@ -29,6 +29,32 @@
 </section> 
 </a>
 </div>
+
+<%= form_with model: @activity, url: activities_path, method: :get, local: true do |form| %>
+<div class="filter_form">
+<%= form.select :keyword,
+ [ 
+  ['No filter', '0'],
+  ['Per date (Asc)', '1'],
+  ['Per date (Desc)', '2'],
+  ['Fitness', '3'],
+  ['Running', '4'],
+  ['Dance', '5'],
+  ['Walking', '6'],
+  ['Cycling', '7'],
+  ['Skating', '8'],
+  ['Strength training', '9'],
+  ['Rowing', '10'],
+  ['Hiking', '11'],
+  ['Mountain biking', '12'],
+  ['Warm-up', '13'],
+
+
+] %>
+
+<%= form.submit 'start'%>
+</div>
+<% end %>
   <div class="activity-ctn">
   <div class="activity-card">  
     <% @activities.each do |activity| %>
