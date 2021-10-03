@@ -17,9 +17,12 @@
 	<div>
 	<h1>Editing Activity</h1>
 	<%= render 'form', activity: @activity %>
-	<%= link_to 'Show', @activity %> |
-	<%= link_to 'Back', activities_path %>
+<div class="back-btn-ctn">
+<div class="back-btn"><%= link_to 'Show', @activity %></div>
+<div class="back-btn-ctn">
+<div class="back-btn"><%= link_to 'Back', activities_path %></div>
 	</div>
+</div>
  </body>
 </html>
 

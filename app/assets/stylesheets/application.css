@@ -7,6 +7,14 @@
     font-weight: normal;
     font-style: normal;*/
 }
+select,option,button,[type="submit" i]{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 * {-moz-box-sizing: border-box; box-sizing: border-box;}
 html{
     height: 100%;
@@ -53,7 +61,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: #c2c2c0 !important;
+    background: #d7d7d7 !important;
     box-shadow: -1px -1px 2px 1px rgba(0, 0, 0, 0.3);
 }
 /*---------------------------------------- HEADER is here !  */
@@ -64,7 +72,7 @@ footer {
     color: black;
 }
 .bg-light {
-    background-color: #c2c2c0 !important;
+    background-color: #d7d7d7 !important;
 }
 .navbar-light .navbar-nav .nav-link {
     color: black;
@@ -109,9 +117,11 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #c2c2c0;
+    background-color: #d7d7d7;
     background-size: cover;
     color: black;
+    text-shadow: -7px 3px 3px rgba(149, 150, 150, 1);
+
 }
 .home-jumbotron-left h1 {
     font-size: 4em;
@@ -135,7 +145,7 @@ footer {
 /*- somes words to present the website -*/
 .home-catchphrase-01 {
     margin: 5%;
-    padding: 3%;
+    padding: 10%;
     background-color: white;
 }
 .home-presentation-txt a {
@@ -149,7 +159,7 @@ footer {
 .home-image-ctn-02{background-color: #c2c2c0;}
 /*- Catchphrases -*/
 .home-catchphrase-02 {
-    padding: 3%;
+    padding: 10%;
     background-color: #0000002e;
     color: white;
     font-size: 1.1em;
@@ -167,6 +177,13 @@ footer {
     margin-top: 5%;}
     .field-01 input, .field-01 label, .field-01 select, .field-01 textarea{
     width: 80% !important;
+
+}
+
+.activity-form{
+
+    width: 90% !important;
+
 }
 }
 
@@ -256,18 +273,70 @@ footer {
 .circle:hover .line2 {
   transform: rotate(0);
 }
+.filter_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3);
+}
+.filter_form select {
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+  width: 70%; 
+  height: 30px;
+  background-color:#10161a;
+  color: white;
+  outline: 0;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.filter_form option{
+  background:transparent;
+  width: fit-content;
+  border: none;
+  outline: 0;}
+.filter_form input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+   width: 30%;
+  text-decoration: none;
+  background-color:#10161a;
+  color: white;
+}
+.filter_form select:hover {
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3)inset;
+    cursor: pointer;
+}
+.filter_form input:hover {
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3)inset;
+    cursor: pointer;
+}
 .activity-ctn {
+
     position: relative;
     background-color: #17171794;
     border-radius: 1px;
     z-index: -1;
-    margin: 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 4%;
+    padding: 4%;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
 }
 .activity-card {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
+
+
 }
 .card-text{
     position: relative;
@@ -278,9 +347,10 @@ footer {
     background: black;
     text-align: center;
     max-width: 300px;
-    min-width:300px;
+    min-width: 250px;
     height: 400px;
     margin:2%;
+    margin-bottom: 7%;
     color: white;
     box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.4);
     border-radius: 5px;
@@ -314,7 +384,7 @@ footer {
     filter: blur(1px);
 }
 .actvity-card-date{
-    
+    overflow-y: hidden;
     font-family: Nirmala UI;
 }
 .card-title{
@@ -571,4 +641,40 @@ footer {
 }
 .activity-card-act a:hover {
     color: silver;
+}
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.actions input{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+.back-btn-ctn{
+
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.back-btn{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   border: 1px solid white;
+    margin-top: 5px;
+}
+.back-btn a{
+    width: 100%;
 }
